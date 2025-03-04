@@ -1,0 +1,147 @@
+terraform apply
+
+Terraform used the selected providers to generate the following execution plan. Resource actions    
+are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.web_app_container will be created
+  + resource "docker_container" "web_app_container" {
+      + attach           = false
+      + bridge           = (known after apply)
+      + command          = (known after apply)
+      + container_logs   = (known after apply)
+      + entrypoint       = (known after apply)
+      + env              = [
+          + "NODE_ENV=production",
+        ]
+      + exit_code        = (known after apply)
+      + gateway          = (known after apply)
+      + hostname         = (known after apply)
+      + id               = (known after apply)
+      + image            = "my-web-app"
+      + init             = (known after apply)
+      + ip_address       = (known after apply)
+      + ip_prefix_length = (known after apply)
+      + ipc_mode         = (known after apply)
+      + log_driver       = "json-file"
+      + logs             = false
+      + must_run         = true
+      + name             = "my-web-app-container"
+      + network_data     = (known after apply)
+      + read_only        = false
+      + remove_volumes   = true
+      + restart          = "no"
+      + rm               = false
+      + security_opts    = (known after apply)
+      + shm_size         = (known after apply)
+      + start            = true
+      + stdin_open       = false
+      + tty              = false
+
+      + healthcheck (known after apply)
+
+      + labels (known after apply)
+
+      + ports {
+          + external = 3000
+          + internal = 3000
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.web_app_image will be created
+  + resource "docker_image" "web_app_image" {
+      + id           = (known after apply)
+      + keep_locally = true
+      + latest       = (known after apply)
+      + name         = "my-web-app"
+      + output       = (known after apply)
+      + repo_digest  = (known after apply)
+
+      + build {
+          + dockerfile = "Dockerfile"
+          + path       = "./"
+          + remove     = true
+          + tag        = []
+          + path       = "./"
+          + remove     = true
+          + tag        = []
+          + remove     = true
+          + tag        = []
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+docker_image.web_app_image: Creating...
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+
+  Enter a value: yes
+
+docker_image.web_app_image: Creating...
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+  Enter a value: yes
+
+docker_image.web_app_image: Creating...
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+
+docker_image.web_app_image: Creating...
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+docker_image.web_app_image: Creating...
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+docker_image.web_app_image: Still creating... [10s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+docker_image.web_app_image: Still creating... [30s elapsed]
+docker_image.web_app_image: Still creating... [20s elapsed]
+docker_image.web_app_image: Still creating... [30s elapsed]
+docker_image.web_app_image: Still creating... [30s elapsed]
+docker_image.web_app_image: Creation complete after 31s [id=sha256:d2413cc3f8441e0590d383c0a4c337a77docker_image.web_app_image: Creation complete after 31s [id=sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85bamy-web-app]
+docker_container.web_app_container: Creating...
+docker_container.web_app_container: Creation complete after 4s [id=fee2d612db7f6fea1ad45f0c7259c892f4a88554c890f02fe08de74e6ab2bb69]
+4a88554c890f02fe08de74e6ab2bb69]
+4a88554c890f02fe08de74e6ab2bb69]
+4a88554c890f02fe08de74e6ab2bb69]
+4a88554c890f02fe08de74e6ab2bb69]
+4a88554c890f02fe08de74e6ab2bb69]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.

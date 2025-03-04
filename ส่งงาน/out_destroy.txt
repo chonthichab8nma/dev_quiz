@@ -1,0 +1,115 @@
+terraform destroy
+docker_image.web_app_image: Refreshing state... [id=sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85bamy-web-app]
+docker_container.web_app_container: Refreshing state... [id=fee2d612db7f6fea1ad45f0c7259c892f4a88554c890f02fe08de74e6ab2bb69]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # docker_container.web_app_container will be destroyed
+  - resource "docker_container" "web_app_container" {
+      - attach            = false -> null
+      - command           = [
+          - "node",
+          - "app.js",
+        ] -> null
+      - cpu_shares        = 0 -> null
+      - dns               = [] -> null
+      - dns_opts          = [] -> null
+      - dns_search        = [] -> null
+      - entrypoint        = [
+          - "docker-entrypoint.sh",
+        ] -> null
+      - env               = [
+          - "NODE_ENV=production",
+        ] -> null
+      - gateway           = "172.17.0.1" -> null
+      - group_add         = [] -> null
+      - hostname          = "fee2d612db7f" -> null
+      - id                = "fee2d612db7f6fea1ad45f0c7259c892f4a88554c890f02fe08de74e6ab2bb69" -> null
+      - image             = "sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85ba" -> null
+      - init              = false -> null
+      - ip_address        = "172.17.0.2" -> null
+      - ip_prefix_length  = 16 -> null
+      - ipc_mode          = "private" -> null
+      - links             = [] -> null
+      - log_driver        = "json-file" -> null
+      - log_opts          = {} -> null
+      - logs              = false -> null
+      - max_retry_count   = 0 -> null
+      - memory            = 0 -> null
+      - memory_swap       = 0 -> null
+      - must_run          = true -> null
+      - name              = "my-web-app-container" -> null
+      - network_data      = [
+          - {
+              - gateway                   = "172.17.0.1"
+              - global_ipv6_prefix_length = 0
+              - ip_address                = "172.17.0.2"
+              - ip_prefix_length          = 16
+              - network_name              = "bridge"
+                # (2 unchanged attributes hidden)
+            },
+        ] -> null
+      - network_mode      = "bridge" -> null
+      - privileged        = false -> null
+      - publish_all_ports = false -> null
+      - read_only         = false -> null
+      - remove_volumes    = true -> null
+      - restart           = "no" -> null
+      - rm                = false -> null
+      - security_opts     = [] -> null
+      - shm_size          = 64 -> null
+      - start             = true -> null
+      - stdin_open        = false -> null
+      - sysctls           = {} -> null
+      - tmpfs             = {} -> null
+      - tty               = false -> null
+      - working_dir       = "/app" -> null
+        # (6 unchanged attributes hidden)
+
+      - ports {
+          - external = 3000 -> null
+          - internal = 3000 -> null
+          - ip       = "0.0.0.0" -> null
+          - protocol = "tcp" -> null
+        }
+    }
+
+  # docker_image.web_app_image will be destroyed
+  - resource "docker_image" "web_app_image" {
+      - id           = "sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85bamy-web-app" -> null
+      - keep_locally = true -> null
+      - latest       = "sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85ba" -> null
+      - name         = "my-web-app" -> null
+      - repo_digest  = "my-web-app@sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85ba" -> null
+
+      - build {
+          - build_arg    = {} -> null
+          - dockerfile   = "Dockerfile" -> null
+          - force_remove = false -> null
+          - label        = {} -> null
+          - no_cache     = false -> null
+          - path         = "./" -> null
+          - remove       = true -> null
+          - tag          = [] -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+docker_container.web_app_container: Destroying... [id=fee2d612db7f6fea1ad45f0c7259c892f4a88554c890f02fe08de74e6ab2bb69]
+docker_container.web_app_container: Destruction complete after 1s
+docker_image.web_app_image: Destroying... [id=sha256:d2413cc3f8441e0590d383c0a4c337a7786c410e112a9b7f718d7dd394be85bamy-web-app]
+docker_image.web_app_image: Destruction complete after 0s
+
+Destroy complete! Resources: 2 destroyed.
